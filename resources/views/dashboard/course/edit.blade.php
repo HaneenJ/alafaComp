@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', '')
+@section('title', 'تعديل كورس')
 @section('css')
 @section('content')
 

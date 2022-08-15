@@ -22,30 +22,22 @@
 
         <div class="news-section">
             <div class="row">
+                @foreach ($items  as $item )
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                     <div class="news-box">
                         <div class="image">
                             <img src="{{ asset('front/assets/img/slider.jpg') }}" alt="">
                         </div>
                         <div class="news-content">
-                            <h4>جمعية العفاف للتوفيق بين الراغبين فى الزواج</h4>
-                            <p>جمعية العفاف للتوفيق بين الراغبين فى الزواج توقع مذكره تعاون مع مركز تاْلف الاْستشارات الاْسرية</p>
-                            <a href="{{ route('news.details') }}" class="news-details-button">التفاصيل</a>
+                            <h4>{{ $item->title }}</h4>
+                            <p class="p-lg">{!! \Illuminate\Support\Str::limit(strip_tags($item->description),50) !!}</p>
+                            <a href="{{ route('newsDetails',$item->id) }}" class="news-details-button">التفاصيل</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                    <div class="news-box">
-                        <div class="image">
-                            <img src="{{ asset('front/assets/img/slider2.jpg') }}" alt="">
-                        </div>
-                        <div class="news-content">
-                            <h4>جمعية العفاف للتوفيق بين الراغبين فى الزواج</h4>
-                            <p>جمعية العفاف للتوفيق بين الراغبين فى الزواج توقع مذكره تعاون مع مركز تاْلف الاْستشارات الاْسرية</p>
-                            <a href="{{ route('news.details') }}" class="news-details-button">التفاصيل</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+               
+                 
             </div>
         </div>
 

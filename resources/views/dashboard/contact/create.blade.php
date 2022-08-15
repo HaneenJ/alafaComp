@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'الوظائف  ' )
+@section('title', 'الخطط  ' )
 @section('css')
 @section('content')
 
@@ -27,7 +27,7 @@
                                     <!--begin::Card header-->
                                     <div class="card-header">
                                         <div class="card-title">
-                                            <h2> اضافة وظيفة جديدة    </h2>
+                                            <h2>اضافة قائمة ماليا</h2>
                                         </div>
                                     </div>
 
@@ -39,12 +39,14 @@
                                                 <input type="text" class="form-control form-control-solid" id="title"
                                                     name="title">
                                             </div>
+
                                             <div class="col-md-4 col-sm-12 mt-8">
 
-                                                <label for="title" class="form-label required">الوصف</label>
-                                                <textarea name="descriptions" id="descriptions" class="form-control form-control-solid" cols="30" rows="5"></textarea>
-                                            </div>
+                                                <label for="file" class="form-label required"> الملف المرفق</label>
+                                                <input type="file" class="form-control form-control-solid" id="file"
+                                                    name="file">
 
+                                            </div>
 
                                         </div>
                                     </div>
@@ -107,7 +109,7 @@
     <script>
         function store() {
             let formData = new FormData($('#create-form')[0]);
-            axios.post('/dashboard/jobs', formData, {
+            axios.post('/dashboard/plans', formData, {
             }).then(function (response) {
                 console.log(response);
                 toastr.success(response.data.message);

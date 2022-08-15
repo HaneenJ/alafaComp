@@ -63,29 +63,35 @@
                     </div>
 
                     <div class="col-lg-8">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                        <form action="{{ route('contactUs') }}" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
+                                    <input type="text" name="name" class="form-control"  
                                         placeholder="الاْسم كاملا" required>
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
+                                    <input type="email" class="form-control" name="email"  
                                         placeholder="البريد الاْليكتروني" required>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
-                                <input type="text" class="form-control" name="subject" id="subject"
+                                <input type="text" class="form-control" name="messageTitle"  
                                     placeholder="عنوان الرسالة" required>
                             </div>
                             <div class="form-group mt-3">
                                 <textarea class="form-control" name="message" placeholder="الرسالة" required></textarea>
                             </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
+                            
                             <div class="text-center"><button type="submit">ارسال الرسالة</button></div>
                         </form>
                     </div><!-- End Contact Form -->

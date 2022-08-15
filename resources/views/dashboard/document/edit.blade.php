@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'الوظائف  ' )
+@section('title', 'قوائم الماليا' )
 @section('css')
 @section('content')
 
@@ -27,23 +27,27 @@
                                     <!--begin::Card header-->
                                     <div class="card-header">
                                         <div class="card-title">
-                                            <h2> اضافة وظيفة جديدة    </h2>
+                                            <h2>اضافة قائمة ماليا</h2>
                                         </div>
                                     </div>
 
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-md-4 col-sm-12 mt-8">
+ 
+                                                <input type="hidden"  class="form-control form-control-solid hidden"  value="{{ $document->key }}" id="key"
+                                                    name="key">
 
-                                                <label for="title" class="form-label required"> العنوان  </label>
-                                                <input type="text" class="form-control form-control-solid" id="title"
-                                                    name="title">
                                             </div>
-                                            <div class="col-md-4 col-sm-12 mt-8">
+                                            <div class="col-12  ">
 
-                                                <label for="title" class="form-label required">الوصف</label>
-                                                <textarea name="descriptions" id="descriptions" class="form-control form-control-solid" cols="30" rows="5"></textarea>
+                                                <label for="title" class="form-label required"> الرابط  </label>
+                                                <input type="text" class="form-control form-control-solid" value="{{ $document->value }}" id="value"
+                                                    name="value">
+
                                             </div>
+                                             
+                                             
 
 
                                         </div>
@@ -67,7 +71,7 @@
                         <!--begin::Button-->
 
 
-                        <button type="button" onclick="store()" class="btn btn-primary">
+                        <button type="button" onclick="update('{{$document->id}}')" class="btn btn-primary">
                             <span class="indicator-label">حفظ</span>
                             <span class="indicator-progress">Please wait...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -105,14 +109,13 @@
         });
     </script>
     <script>
-        function store() {
+        function update(id) {
             let formData = new FormData($('#create-form')[0]);
-            axios.post('/dashboard/jobs', formData, {
-            }).then(function (response) {
+            formData.append('_method','PUT');
+            axios.post('/dashboard/documents/'+id, formData).then(function (response) {
                 console.log(response);
                 toastr.success(response.data.message);
-                document.getElementById('create-form').reset();
-                // window.location.href = '/dashboard/settings/';
+                window.location.href = '/dashboard/documents/';
             }).catch(function (error) {
 
                 let messages = '';

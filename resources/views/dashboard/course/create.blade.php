@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', '' )
+@section('title', 'اضافة كورس جديد' )
 @section('css')
 @section('content')
 
@@ -27,7 +27,7 @@
                                     <!--begin::Card header-->
                                     <div class="card-header">
                                         <div class="card-title">
-                                            <h2>اضافة    دورة جديدة </h2>
+                                            <h2>اضافة    كورس جديدة </h2>
                                         </div>
                                     </div>
 

@@ -16,23 +16,22 @@
 <section class="meetings_boxes">
     <div class="container">
 
-        <form action="">
+        <form action="{{ route('courses') }}"  method="get">
             <div class="search-box">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for=""><b>عنوان الدورة</b></label>
-                            <input type="text" name="course_name" class="form-control">
+                            <input type="text" name="search" class="form-control" value="{{ request()->search }}">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for=""><b>التصنيف</b></label>
-                            <select name="category_id" id="category_id" class="form-control">
-                                <option value="" style="font-weight:bold">-اْختر-</option>
-                                <option value="">اْرشيف الدورات</option>
-                                <option value="">اْونلاين</option>
-                                <option value="">حضورية</option>
+                            <select name="type"  class="form-control">
+                                <option value="" style="font-weight:bold">-اْختر-</option>                                
+                                <option value="online" {{ request()->type =='online' ? 'selected' : '' }}> اْونلاين</option>
+                                <option value="onSite" {{ request()->type =='onSite' ? 'selected' : '' }}> حضورية</option>
                             </select>
                         </div>
                     </div>
@@ -46,8 +45,6 @@
                 <div class="row">
 
                     @foreach ($courses as $course)
-                        
-                    @endforeach
                     <div class="col-xl-4 col-lg-6 col-sm-12">
                         <div class="course-box">
                             <div class="image">
@@ -61,7 +58,9 @@
                                 <span></span>
                             </a>
                         </div>
-                    </div>   
+                    </div>  
+                    @endforeach
+                     
                
                     
                 </div>

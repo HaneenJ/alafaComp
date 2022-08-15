@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'اجتماعات مجلس الادارة في جمعية قمم الشبابية')
+@section('title', 'الكورسات')
 @section('css')
 @section('content')
 

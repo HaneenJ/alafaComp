@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'قوائم الماليا' )
+@section('title', ' الوظائف ' )
 @section('css')
 @section('content')
 
@@ -27,7 +27,7 @@
                                     <!--begin::Card header-->
                                     <div class="card-header">
                                         <div class="card-title">
-                                            <h2>اضافة قائمة ماليا</h2>
+                                            <h2> تعديل على وظائف </h2>
                                         </div>
                                     </div>
 

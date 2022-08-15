@@ -3,10 +3,12 @@
 @section('content')
 
 
+
+
 <section class="course_single_box" style="margin:0">
     <div class="container">
 
-        <h3 style="font-size:60px;margin-top:80px" class="main-title">تفاصيل الخبر</h3>
+        <h3 style="font-size:60px;margin-top:80px" class="main-title">تفاصيل الوظيفة</h3>
 
 
         <div class="row">

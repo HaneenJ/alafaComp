@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'الوظائف  ' )
+@section('title', 'الاستبيان  والقياس  ' )
 @section('css')
 @section('content')
 
@@ -27,7 +27,7 @@
                                     <!--begin::Card header-->
                                     <div class="card-header">
                                         <div class="card-title">
-                                            <h2> اضافة وظيفة جديدة    </h2>
+                                            <h2>اضافة اضافة الاستبيان والقياس</h2>
                                         </div>
                                     </div>
 
@@ -39,12 +39,13 @@
                                                 <input type="text" class="form-control form-control-solid" id="title"
                                                     name="title">
                                             </div>
+
                                             <div class="col-md-4 col-sm-12 mt-8">
 
-                                                <label for="title" class="form-label required">الوصف</label>
-                                                <textarea name="descriptions" id="descriptions" class="form-control form-control-solid" cols="30" rows="5"></textarea>
+                                                <label for="title" class="form-label required"> الرابط  </label>
+                                                <input type="url" class="form-control form-control-solid" id="url"
+                                                    name="url">
                                             </div>
-
 
                                         </div>
                                     </div>
@@ -107,7 +108,7 @@
     <script>
         function store() {
             let formData = new FormData($('#create-form')[0]);
-            axios.post('/dashboard/jobs', formData, {
+            axios.post('/dashboard/questionnaires', formData, {
             }).then(function (response) {
                 console.log(response);
                 toastr.success(response.data.message);

@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'قوائم الماليا' )
+@section('title', ' تعديل على الخبر  ' )
 @section('css')
 @section('content')
 

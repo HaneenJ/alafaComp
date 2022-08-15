@@ -17,46 +17,23 @@
     <div class="container">
 
         <div class="row">
+            @foreach ($items  as $item )
             <div class="col-md-4">
                 <div class="manager-box">
                     <div class="image">
                         <img src="{{ asset('front/assets/img/55.jpg') }}" alt="">
                     </div>
-                    <h4>اْستمارة قياس رضا زوار جمعية قمم الشبابية</h4>
-                    <a href="" class="main-button" style="margin:auto;height:40px">
+                    <h4>{{ $item->title }}</h4>
+                    <a href="{{ $item->url }}" target="_blank" class="main-button" style="margin:auto;height:40px">
                         <span> تعبئة الاْستبيان</span>
                         <span></span>
                         <span></span>
                     </a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="manager-box">
-                    <div class="image">
-                        <img src="{{ asset('front/assets/img/55.jpg') }}" alt="">
-                    </div>
-                    <h4>اْستمارة قياس رضا المستفيدين من الجمعية</h4>
-                    <a href="" class="main-button" style="margin:auto;height:40px">
-                        <span> تعبئة الاْستبيان</span>
-                        <span></span>
-                        <span></span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="manager-box">
-                    <div class="image">
-                        <img src="{{ asset('front/assets/img/55.jpg') }}" alt="">
-                    </div>
-                    <h4>اْستمارة قياس رضا الموظفين فى الجمعية</h4>
-                    <a href="" class="main-button" style="margin:auto;height:40px">
-                        <span> تعبئة الاْستبيان</span>
-                        <span></span>
-                        <span></span>
-                    </a>
-                </div>
-            </div>
-           
+
+            @endforeach
+
         </div>
 
     </div>

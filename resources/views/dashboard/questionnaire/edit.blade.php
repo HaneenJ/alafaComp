@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'الوظائف  ' )
+@section('title', 'الاستبيان  والقياس' )
 @section('css')
 @section('content')
 
@@ -27,7 +27,7 @@
                                     <!--begin::Card header-->
                                     <div class="card-header">
                                         <div class="card-title">
-                                            <h2> اضافة وظيفة جديدة    </h2>
+                                            <h2> الاستبيان والقياس    </h2>
                                         </div>
                                     </div>
 
@@ -36,13 +36,16 @@
                                             <div class="col-md-4 col-sm-12 mt-8">
 
                                                 <label for="title" class="form-label required"> العنوان  </label>
-                                                <input type="text" class="form-control form-control-solid" id="title"
+                                                <input type="text" class="form-control form-control-solid" value="{{ $questionnaire->title }}" id="title"
                                                     name="title">
+
                                             </div>
                                             <div class="col-md-4 col-sm-12 mt-8">
 
-                                                <label for="title" class="form-label required">الوصف</label>
-                                                <textarea name="descriptions" id="descriptions" class="form-control form-control-solid" cols="30" rows="5"></textarea>
+                                                <label for="title" class="form-label required"> الرابط  </label>
+                                                <input type="url" class="form-control form-control-solid" value="{{ $questionnaire->url }}" id="url"
+                                                    name="url">
+
                                             </div>
 
 
@@ -67,7 +70,7 @@
                         <!--begin::Button-->
 
 
-                        <button type="button" onclick="store()" class="btn btn-primary">
+                        <button type="button" onclick="update('{{$questionnaire->id}}')" class="btn btn-primary">
                             <span class="indicator-label">حفظ</span>
                             <span class="indicator-progress">Please wait...
                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -105,14 +108,13 @@
         });
     </script>
     <script>
-        function store() {
+        function update(id) {
             let formData = new FormData($('#create-form')[0]);
-            axios.post('/dashboard/jobs', formData, {
-            }).then(function (response) {
+            formData.append('_method','PUT');
+            axios.post('/dashboard/questionnaires/'+id, formData).then(function (response) {
                 console.log(response);
                 toastr.success(response.data.message);
-                document.getElementById('create-form').reset();
-                // window.location.href = '/dashboard/settings/';
+                window.location.href = '/dashboard/questionnaires/';
             }).catch(function (error) {
 
                 let messages = '';

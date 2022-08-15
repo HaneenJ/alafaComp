@@ -7,16 +7,13 @@
                 <div style="width:10%;float:right;margin-top:10px">
                     <span>اْخر الاْخبار</span>
                 </div>
-                  <div style="width:90%;float:left">
-                  
-                    
-                            <marquee style="width:100%;padding:10px;background-color:#fff;border-bottom:2px solid #cb3434"
-                                behavior=scroll direction="right" scrollamount="5">
-                            جمعية العفاف للتوفيق بين الراغبين في الزواج
-                            </marquee>
-                    
-                       
-                 </div>
+                <div style="width:90%;float:left">
+                <marquee style="width:100%;padding:10px;background-color:#fff;border-bottom:2px solid #cb3434" behavior=scroll direction="right" scrollamount="5">
+                    @foreach($news as $new)
+                        {{ $new->title }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @endforeach
+                </marquee>
+            </div>
                 <div class="clear-both"></div>
             </div>
             <!-- <hr style="width:100%;height:4px;color:#cb3434;background-color:#cb3434"> -->
@@ -131,7 +128,7 @@
                                         <i class="fa fa-eye fa-3x" style="color:red"></i>
                                     </div>
                                     <h4 class="text-center">رؤية جمعية العفاف</h4>
-                                    <p class="text-center">الوجهة الآمنة و الموثوقة للراغبين في الزواج</p>
+                                    <p class="text-center"> {{ $our_vision->value }}  </p>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -140,9 +137,7 @@
                                         <i class="fa fa-file fa-3x" style="color:green"></i>
                                     </div>
                                     <h4 class="text-center">رسالة جمعية العفاف</h4>
-                                    <p class="text-center">نمنح النصح و الاستشارة الآمنة ، بسرية تامة حول اختيار الشريك
-                                        الكفؤ من خلال المعاييرالدقيقة و الضوابط الشرعية لتحقيق التوافق الامثل و الاستدامة
-                                        الاسرية بين الطرفين </p>
+                                    <p class="text-center"> {{ $message->value }}</p>
                                 </div>
 
                             </div>
@@ -152,7 +147,7 @@
                                         <i class="fa fa-star fa-3x" style="color:tomato"></i>
                                     </div>
                                     <h4 class="text-center">قيمنا</h4>
-                                    <p> المصداقية ، الامانة ، النزاهة ، الالتزام ، التميز و الاحترافية</p>
+                                    <p>{{ $our_value->value }}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -161,7 +156,7 @@
                                         <i class="fa fa-cog fa-3x" style="color:#0ea2bd"></i>
                                     </div>
                                     <h4 class="text-center">شعارنا</h4>
-                                    <p class="text-center">حيث الاختيار الآمن</p>
+                                    <p class="text-center"> {{ $our_logo->value }}</p>
                                 </div>
                             </div>
                         </div>
@@ -226,22 +221,52 @@
                 </div>
 
                 <div class="row gy-5">
-                @foreach ($teams as $team )
+              
                     <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
                         <div class="team-member">
                             <div class="member-img" style="width:100%">
-                                <img style="width:100%" src="{{ $team->image_path }}" class=""
+                                <img style="width:100%" src="{{ asset('front/assets/img/odw.png') }}" class=""
                                     alt="">
                             </div>
                             <div class="member-info">
-                                <h4>{{ $team->name }}</h4>
-                                <span>{{ $team->position }}</span>
+                                <h4>الشيخ القاضي/ عبدلله بن عبدالرحمن العثيم</h4>
+                                <span>رئيس مجلس الادارة</span>
                             </div>
                         </div>
-                    </div><!-- End Team Member -->
+
+                    </div>
+                    <!-- End Team Member -->
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="team-member">
+                            <div class="member-img" style="width:100%">
+                                <img style="width:100%" src="{{ asset('front/assets/img/odw2.png') }}" class=""
+                                    alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4> 
+الشيخ د. محمد بن مجدوع الشهري</h4>
+                                <span>نائبا للرئيس</span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="team-member">
+                            <div class="member-img" style="width:100%">
+                                <img style="width:100%" src="{{ asset('front/assets/img/odw3.png') }}" class=""
+                                    alt="">
+                            </div>
+                            <div class="member-info">
+                                <h4> 
+الأستاذ/ إبراهيم بن عبدالحميد الشيخ    <h4>
+                                <span>المشرف المالي  </span>
+                            </div>
+                        </div>
+                        
+                    </div>
 
 
-                @endforeach
+         
 
 
 

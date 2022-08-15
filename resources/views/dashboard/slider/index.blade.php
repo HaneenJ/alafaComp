@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'اجتماعات مجلس الادارة في جمعية قمم الشبابية')
+@section('title', '  سلايدر ')
 @section('css')
 @section('content')
 
@@ -48,8 +48,7 @@
                                     <th> الرقم # </th>
                                     <th>الصورة</th>
                                     <th>الاسم</th>
-                                    <th>المسمى الوظيفي</th>
-                                    <th>نوع العضو</th>
+                                    <th> الوصف  </th>
                                     <th>أنشئ بتاريخ</th>
                                     <th>العماليات</th>
 
@@ -65,9 +64,9 @@
                                         </td>
 
 
-                                        <td>{{ $data->name }}</td>
-                                        <td>{{ $data->position }}</td>
-                                        <td>{{ $data->team }}</td>
+                                        <td>{{ $data->title }}</td>
+                                        <td>{{ $data->descriptions }}</td>
+
                                         <td>{{ $data->created_at->diffForHumans() }}</td>
                                         <td>
                                             <a href="{{ route('sliders.edit', $data->id) }}" class="btn btn-icon btn-info"><i

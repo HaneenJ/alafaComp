@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'الخطط ')
+@section('title', 'اضافة خبر جديد ')
 @section('css')
 @section('content')
 

@@ -80,7 +80,7 @@
     <header id="header" class="header" data-scrollto-offset="0">
         <div class="container-fluid d-flex align-items-center justify-content-between">
 
-            <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+            <a href="{{ url('') }}" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
                 <!-- Uncomment the line below if you also wish to use an image logo -->
                 <!-- <img src="{{ asset('front/assets/img/logo.png') }}" alt=""> -->
                 <h1><span><img src="{{ asset('front/assets/img/logo.png') }}"></span></h1>
@@ -101,22 +101,22 @@
                             <li><a href="{{ route('adminstrative') }}"  class="{{ Route::currentRouteName() == 'adminstrative-systems' ? 'active' : '' }}">الأنظمة الادارية والسياسات</a></li>
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'ecommerce' ? 'active' : '' }}" href="#">المتجر الالكتروني</a></li>
+                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'ecommerce' ? 'active' : '' }}" href="{{ route('ecommerce') }}">المتجر الالكتروني</a></li>
                     <li class="dropdown"><a href="#"><span>البرامج</span> <i
                                 class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
-                            <li><a class="{{ Route::currentRouteName() == 'meetings.courses.details' ? 'active' : '' }}" href="#">اللقاءات والدورات </a></li>
-                            <li><a class="{{ Route::currentRouteName() == 'consultations' ? 'active' : '' }}" href="#">الاستشارات </a></li>
+                            <li><a class="{{ Route::currentRouteName() == 'meetings.courses.details' ? 'active' : '' }}" href="{{ route('courses') }}">اللقاءات والدورات </a></li>
+                            <li><a class="{{ Route::currentRouteName() == 'consultations' ? 'active' : '' }}" href="{{ route('consultation') }}">الاستشارات </a></li>
 
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'news' ? 'active' : '' }}" href="#">الاْخبار</a></li>
+                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'news' ? 'active' : '' }}" href="{{ route('news') }}">الاْخبار</a></li>
                     <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'jobs' ? 'active' : '' }}" href="{{ route('jobs') }}">الوظائف</a></li>
-                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'questionnaire' ? 'active' : '' }}" href="#">استبيان وقياس</a></li>
+                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'questionnaire' ? 'active' : '' }}" href="{{ route('questionnaire') }} " > استبيان وقياس</a></li>
 
 
-                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'terms-conditions' ? 'active' : '' }}" href="#">الشروط والاْحكام</a></li>
-                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'contact' ? 'active' : '' }}" href="#">اتصل بنا</a></li>
+                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'terms-conditions' ? 'active' : '' }}" href=" {{ route('condition') }}">الشروط والاْحكام</a></li>
+                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'contact' ? 'active' : '' }}" href="{{ route('contact') }}">اتصل بنا</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>
             </nav><!-- .navbar -->

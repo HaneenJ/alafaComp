@@ -3,7 +3,9 @@
 use App\Http\Controllers\Dashboard\AchievementController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Dashboard\AdminstrativeController;
+use App\Http\Controllers\Dashboard\ContactController;
 use App\Http\Controllers\Dashboard\CoursesController;
+use App\Http\Controllers\Dashboard\DocumentController;
 use App\Http\Controllers\Dashboard\FinanciallyController;
 use App\Http\Controllers\Dashboard\JobController;
 use App\Http\Controllers\Dashboard\MeetingController;
@@ -12,6 +14,7 @@ use App\Http\Controllers\Dashboard\PublicAssociationController;
 use App\Http\Controllers\Dashboard\TeamController;
 use App\Http\Controllers\Dashboard\PlanController;
 use App\Http\Controllers\Dashboard\PolicyController;
+use App\Http\Controllers\Dashboard\QuestionnaireController;
 use App\Http\Controllers\Dashboard\SliderController;
 use App\Http\Controllers\Dashboard\TargetController;
 use App\Http\Controllers\FrontController;
@@ -31,14 +34,37 @@ use Illuminate\Support\Facades\Route;
 
 
  Route::get('/',[FrontController::class,'index'])->name('home');
+
  Route::get('/jobs',[FrontController::class,'jobs'])->name('jobs');
+
+
+ Route::get('/job-details/{id}',[FrontController::class,'jobDetails'])->name('jobDetails');
+
+ Route::get('/news',[FrontController::class,'news'])->name('news');
+
+ Route::get('/news-details/{id}',[FrontController::class,'newsDetails'])->name('newsDetails');
+
  Route::get('/manager',[FrontController::class,'manager'])->name('manager');
+
  Route::get('/team-Details',[FrontController::class,'teamDetails'])->name('teamDetails');
+
  Route::get('/courses',[FrontController::class,'courses'])->name('courses');
+
+ Route::get('/questionnaire',[FrontController::class,'questionnaire'])->name('questionnaire');
+
  Route::get('/coursesDetails/{id}',[FrontController::class,'coursesDetails'])->name('coursesDetails');
+
  Route::get('/adminstrative',[FrontController::class,'adminstrative'])->name('adminstrative');
- 
+
+ Route::get('/contact-us',[FrontController::class,'contact'])->name('contact');
+
+ Route::post('/contact-us-store',[FrontController::class,'contactUs'])->name('contactUs');
+
+
  Route::get('/public-associations',[FrontController::class,'publicAssociations'])->name('publicAssociations');
+ Route::get('/consultation',[FrontController::class,'consultation'])->name('consultation');
+ Route::get('/eCommerce',[FrontController::class,'ecommerce'])->name('ecommerce');
+ Route::get('/termsCondition',[FrontController::class,'condition'])->name('condition');
 
 Route::prefix('dashboard')->middleware('guest:admin')->group(function () {
 
@@ -64,6 +90,9 @@ Route::prefix('dashboard')->middleware('auth:admin') ->group(function () {
     Route::resource('sliders',  SliderController::class);
     Route::resource('adminstratives',  AdminstrativeController::class);
     Route::resource('targets',  TargetController::class);
+    Route::resource('contacts',  ContactController::class);
+    Route::resource('documents',  DocumentController::class);
+    Route::resource('questionnaires',  QuestionnaireController::class);
 
 
     Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');

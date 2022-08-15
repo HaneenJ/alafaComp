@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'مجلس الادرارة')
+@section('title', 'الاستبيان والقياس')
 @section('css')
 @section('content')
 
@@ -28,7 +28,7 @@
 
 
                             <!--begin::Add customer-->
-                            <a href="{{ route('adminstratives.create') }}"   class="btn btn-primary"
+                            <a href="{{ route('questionnaires.create') }}"   class="btn btn-primary"
                                 data-bs-target="#kt_modal_add_customer"> اضافة  </a>
                             <!--end::Add customer-->
                         </div>
@@ -47,7 +47,7 @@
                             <tr class="fw-bolder fs-6 text-gray-800 px-7">
                                 <th> الرقم # </th>
                                 <th>العنوان</th>
-                                <th>الملف ا لمرفق</th>
+                                <th>الرابط</th>
                                 <th>أنشئ بتاريخ</th>
                                 <th> العمليات</th>
 
@@ -59,12 +59,13 @@
                                 <tr>
                                     <td> {{ $loop->iteration }}</td>
                                     <td> {{ $data->title }} </td>
+                                    <td> {{ $data->url }} </td>
 
-                                    <td> <a href="{{ $data->file_path }}" target="_blank"> الملف المرفق</a></td>
+
 
                                     <td>{{ $data->created_at->diffForHumans() }}</td>
                                     <td>
-                                        <a href="{{ route('adminstratives.edit', $data->id) }}"
+                                        <a href="{{ route('questionnaires.edit', $data->id) }}"
                                             class="btn btn-icon btn-info"><i class="las la-edit fs-2 me-2"></i></a>
                                         <a href="#" onclick="confirmDestroy('{{ $data->id }}',this)"
                                             class="btn btn-icon btn-danger"><i class="las la-trash fs-2 me-2"></i>
@@ -138,7 +139,7 @@
 
         function destroy(id, reference) {
             //JS - Axios
-            axios.delete('/dashboard/adminstratives/'+id)
+            axios.delete('/dashboard/questionnaires/'+id)
                 .then(function (response) {
                     // handle success
                     console.log(response);

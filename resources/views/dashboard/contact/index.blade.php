@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title', 'مجلس الادرارة')
+@section('title', 'توصل معنا')
 @section('css')
 @section('content')
 
@@ -28,8 +28,7 @@
 
 
                             <!--begin::Add customer-->
-                            <a href="{{ route('adminstratives.create') }}"   class="btn btn-primary"
-                                data-bs-target="#kt_modal_add_customer"> اضافة  </a>
+                             
                             <!--end::Add customer-->
                         </div>
                         <!--end::Toolbar-->
@@ -46,8 +45,10 @@
                         <thead>
                             <tr class="fw-bolder fs-6 text-gray-800 px-7">
                                 <th> الرقم # </th>
-                                <th>العنوان</th>
-                                <th>الملف ا لمرفق</th>
+                                <th>الاسم</th>
+                                <th>   الايميل  </th>
+                                <th>   عنوان الرسالة  </th>
+                                <th>     الرسالة  </th>
                                 <th>أنشئ بتاريخ</th>
                                 <th> العمليات</th>
 
@@ -58,14 +59,16 @@
                             @forelse ($datas as  $data)
                                 <tr>
                                     <td> {{ $loop->iteration }}</td>
-                                    <td> {{ $data->title }} </td>
+                                    <td> {{ $data->name }} </td>                                  
+                                    <td> {{ $data->email }} </td>                                  
+                                    <td> {{ $data->messageTitle }} </td>                                  
+                                    <td> {{ $data->message }} </td>                                  
 
-                                    <td> <a href="{{ $data->file_path }}" target="_blank"> الملف المرفق</a></td>
+                                  
 
                                     <td>{{ $data->created_at->diffForHumans() }}</td>
                                     <td>
-                                        <a href="{{ route('adminstratives.edit', $data->id) }}"
-                                            class="btn btn-icon btn-info"><i class="las la-edit fs-2 me-2"></i></a>
+                                         
                                         <a href="#" onclick="confirmDestroy('{{ $data->id }}',this)"
                                             class="btn btn-icon btn-danger"><i class="las la-trash fs-2 me-2"></i>
                                         </a>
@@ -138,7 +141,7 @@
 
         function destroy(id, reference) {
             //JS - Axios
-            axios.delete('/dashboard/adminstratives/'+id)
+            axios.delete('/dashboard/contacts/'+id)
                 .then(function (response) {
                     // handle success
                     console.log(response);
