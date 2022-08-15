@@ -1,0 +1,77 @@
+<div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+                <div class="col-lg-5">
+                    <div class="about-img">
+                        <img src="{{ asset('front/assets/img/about-us.jpg') }}" class="img-fluid" alt="">
+                    </div>
+                </div>
+
+                <div class="col-lg-7">
+                    <h4 class="pt-0 pt-lg-5">ما هي جمعية العفاف ؟ </h4>
+
+                    <!-- Tabs -->
+                    <ul class="nav nav-pills mb-3">
+                        <li><a class="nav-link active" data-bs-toggle="pill" href="#tab1"> الرؤية</a></li>
+                        <li style=" margin-right: 20px; margin-left: 5%"><a class="nav-link " data-bs-toggle="pill"
+                                href="#tab2"> الرسالة</a></li>
+                        <li><a class="nav-link" data-bs-toggle="pill" href="#tab3">قيمنا وشعارنا</a></li>
+
+                    </ul><!-- End Tabs -->
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+
+                        <div class="tab-pane fade show active" id="tab1">
+
+
+
+                            <div class="d-flex align-items-center mt-4">
+                                <i class="bi bi-check2"></i>
+                                <h4>رؤية جمعية العفاف</h4>
+                            </div>
+                            <p>الوجهة الآمنة و الموثوقة للراغبين في الزواج</p>
+
+
+
+
+                        </div><!-- End Tab 1 Content -->
+
+                        <div class="tab-pane fade show" id="tab2">
+
+
+
+                            <div class="d-flex align-items-center mt-4">
+                                <i class="bi bi-check2"></i>
+                                <h4>رسالة جمعية العفاف</h4>
+                            </div>
+                            <p>نمنح النصح و الاستشارة الآمنة ، بسرية تامة حول اختيار الشريك الكفؤ من خلال المعايير
+                                الدقيقة و الضوابط الشرعية لتحقيق التوافق الامثل و الاستدامة الاسرية بين الطرفين </p>
+
+
+                        </div><!-- End Tab 2 Content -->
+
+                        <div class="tab-pane fade show" id="tab3">
+
+
+
+                            <div class="d-flex align-items-center mt-4">
+                                <i class="bi bi-check2"></i>
+                                <h4>قيمنا</h4>
+                            </div>
+                            <p> المصداقية ، الامانة ، النزاهة ، الالتزام ، التميز و الاحترافية</p>
+
+                            <div class="d-flex align-items-center mt-4">
+                                <i class="bi bi-check2"></i>
+                                <h4>شعارنا</h4>
+                            </div>
+                            <p>حيث الاختيار الآمن</p>
+
+
+
+                        </div><!-- End Tab 3 Content -->
+
+                    </div>
+
+                </div>
+
+            </div>

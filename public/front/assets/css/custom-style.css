@@ -1,0 +1,16 @@
+
+@media (min-width: 1280px){
+.navbar .dropdown ul {
+    right: 0;
+    left: auto;
+}
+
+}
+
+.faq .accordion-button:after{
+    left: 15px;
+    right: auto;
+}
+.carousel-caption{
+    bottom: 50%;
+}

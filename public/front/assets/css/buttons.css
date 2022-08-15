@@ -1,0 +1,46 @@
+/*########################### Start Animated Buttons  ###########################*/
+
+.main-button,
+.main-button:hover
+{
+    background-color: #222;
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    overflow: hidden;
+    transition: .6s;
+    position: relative; 
+    width: 180px;
+    height: 45px;
+    /* justify-content: center; */
+    margin: 80px auto;
+}
+
+.main-button span:nth-child(1)
+{
+    position: absolute;
+    z-index: 9999;
+}
+
+.main-button span:nth-child(2)
+{
+    position: absolute;
+    width: 250%;
+    height: 100%;
+    background-color: var(--color-primary);;
+    border-radius: 0px;
+    transition: .6s;
+    transform: rotate(90deg);
+    top: 0;
+    left: -230px;
+}
+
+.main-button:hover span:nth-child(2)
+{
+    transform: rotateY(0deg);
+}
