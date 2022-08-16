@@ -17,7 +17,7 @@
 <section class="meetings_boxes" style="background-color:#fff">
     <div class="container">
 
-        <h3>إجتماعات مجلس الإدارة في جمعية قمم الشبابية</h3>
+        <h3>إجتماعات مجلس الإدارة في جمعية العفاف للتوفيق بين الرغبين في الزواج   </h3>
 
         <br><br>
 
