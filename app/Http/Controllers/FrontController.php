@@ -80,7 +80,7 @@ class FrontController extends Controller
 
 public function newss()
     {
-        $news = news::all();
+        $news = news::latest()->take(5)->get();
         
         return response()->view('front.index', compact('news'));
 

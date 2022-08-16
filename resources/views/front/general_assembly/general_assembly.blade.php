@@ -23,7 +23,7 @@
                 <div class="col-md-3">
                     <div class="manager-box">
                         <div class="image">
-                            <a href="{{ $item->file_path }}" target="_blank"><img src="{{ asset('front/assets/img/meetings/m1.png') }}" alt=""></a>
+                            <a href="{{ $item->file_path }}" target="_blank"><img src="{{ asset('front/assets/img/slider3.jpg') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
