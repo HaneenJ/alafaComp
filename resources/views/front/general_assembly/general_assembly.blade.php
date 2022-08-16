@@ -23,8 +23,9 @@
                 <div class="col-md-3">
                     <div class="manager-box">
                         <div class="image">
-                            <a href="{{ $item->file_path }}" target="_blank"><img src="{{ asset('front/assets/img/slider3.jpg') }}" alt=""></a>
+                            <a href="{{ $item->file_path }}" target="_blank"><img src="{{ asset('front/assets/img/slider3.jpeg') }}" alt=""></a>
                         </div>
+                        <h3 style="color:tomato;font-size:22px;padding:10px 0;line-height:40px">{{ $item->title }}</h3>
                     </div>
                 </div>
             @endforeach
