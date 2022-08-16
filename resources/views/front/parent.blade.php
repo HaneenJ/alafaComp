@@ -92,7 +92,7 @@
 
 
                        <l><a class="nav-link scrollto {{ Route::currentRouteName() == 'frontend.index' ? 'active' : '' }}" href="{{  url('') }}">الصفحة الرئيسية</a></l>
-                     <li><a class="nav-link scrollto  {{ Route::currentRouteName() == 'about-us' ? 'active' : '' }}" href="#">من نحن</a></li>
+                     <li><a class="nav-link scrollto  {{ Route::currentRouteName() == 'about-us' ? 'active' : '' }}" href="{{ route('about') }}">من نحن</a></li>
                     <li class="dropdown"><a href="#"><span>الاجتماعت والشراكات</span> <i
                                 class="bi bi-chevron-down dropdown-indicator"></i></a>
                         <ul>
@@ -115,7 +115,7 @@
                     <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'questionnaire' ? 'active' : '' }}" href="{{ route('questionnaire') }} " > استبيان وقياس</a></li>
 
 
-                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'terms-conditions' ? 'active' : '' }}" href=" {{ route('condition') }}">الشروط والاْحكام</a></li>
+                    <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'terms-conditions' ? 'active' : '' }}" href=" {{ route('conditions') }}">الشروط والاْحكام</a></li>
                     <li><a class="nav-link scrollto {{ Route::currentRouteName() == 'contact' ? 'active' : '' }}" href="{{ route('contact') }}">اتصل بنا</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle d-none"></i>

@@ -2,23 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Achievement;
-use App\Models\Adminstrative;
-use App\Models\Contact;
-use App\Models\Courses;
-use App\Models\Document;
-use App\Models\Financially;
+use Carbon\Carbon;
 use App\Models\Job;
-use App\Models\Meeting;
 use App\Models\News;
 use App\Models\Plan;
-use App\Models\Policy;
-use App\Models\publicAssociation;
-use App\Models\Questionnaire;
-use App\Models\Target;
 use App\Models\Team;
-use Carbon\Carbon;
+use App\Models\Policy;
+use App\Models\Target;
+use App\Models\Contact;
+use App\Models\Courses;
+use App\Models\Meeting;
+use App\Models\Document;
+use App\Models\Conditions;
+use App\Models\Achievement;
+use App\Models\Financially;
 use Illuminate\Http\Request;
+use App\Models\Adminstrative;
+use App\Models\Questionnaire;
+use App\Models\publicAssociation;
 use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\Constraint\Count;
 use Symfony\Component\HttpFoundation\Response;
@@ -181,9 +182,25 @@ public function newss()
 
         return view('front.ecommerce.ecommerce' );
     }
-    public function condition()
+
+
+    public function conditions()
+    {
+        $conditions = Conditions::all();
+
+        return view('front.terms_conditions.terms-conditions',compact('conditions'));
+    }
+    public function about()
     {
 
-        return view('front.terms_conditions.terms-conditions' );
+
+        $our_vision = Document::where('key', 'vision')->first();
+        $who_us = Document::where('key', 'who-us')->first();
+        $message = Document::where('key', 'message')->first();
+        $our_value = Document::where('key', 'our_value')->first();
+        $our_logo = Document::where('key', 'logo')->first();
+
+        return view('front.about.about', compact(  'our_vision', 'who_us', 'message', 'our_value', 'our_logo'));
     }
 }
+

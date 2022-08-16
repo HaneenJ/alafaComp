@@ -78,7 +78,7 @@
         {
             background-color: #5c935c;
         }
-        
+
         .new_about .about-box.orange h4::after
         {
             background-color: orange;
@@ -123,7 +123,7 @@
                             <div class="image">
                                 <img src="{{ asset('front/assets/img/new_about/ab1.png') }}" alt="">
                                 <h4>شعارنا</h4>
-                                <p>حيث الاْختيار الاْمن</p>
+                                <p>{{ $our_logo->value }}    </p>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                             <div class="image">
                                 <img src="{{ asset('front/assets/img/new_about/ab2.png') }}" alt="">
                                 <h4>الروْية</h4>
-                                <p>الوجهة الآمنة و الموثوقة للراغبين في الزواج</p>
+                                <p>  {{ $our_vision->value }}    </p>
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                             <div class="image">
                                 <img src="{{ asset('front/assets/img/new_about/ab3.png') }}" alt="">
                                 <h4>الرسالة</h4>
-                                <p>نمنح النصح و الاستشارة الآمنة ، بسرية تامة حول اختيار الشريك الكفؤ من خلال المعايير الدقيقة و الضوابط الشرعية لتحقيق التوافق الامثل و الاستدامة الاسرية بين الطرفين</p>
+                                <p>  {{ $message->value }}</p>
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
                             <div class="image">
                                 <img src="{{ asset('front/assets/img/new_about/ab4.png') }}" alt="">
                                 <h4>قيمنا</h4>
-                                <p>المصداقية ، الامانة ، النزاهة ، الالتزام ، التميز و الاحترافية</p>
+                                <p>{{ $our_value->value }}</p>
                             </div>
                         </div>
                     </div>

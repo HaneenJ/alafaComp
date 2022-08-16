@@ -18,6 +18,7 @@ use App\Http\Controllers\Dashboard\QuestionnaireController;
 use App\Http\Controllers\Dashboard\SliderController;
 use App\Http\Controllers\Dashboard\TargetController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\Dashboard\ConditionsController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
@@ -64,7 +65,10 @@ use Illuminate\Support\Facades\Route;
  Route::get('/public-associations',[FrontController::class,'publicAssociations'])->name('publicAssociations');
  Route::get('/consultation',[FrontController::class,'consultation'])->name('consultation');
  Route::get('/eCommerce',[FrontController::class,'ecommerce'])->name('ecommerce');
- Route::get('/termsCondition',[FrontController::class,'condition'])->name('condition');
+ Route::get('/termsConditions',[FrontController::class,'conditions'])->name('conditions');
+ 
+
+ Route::get('/about',[FrontController::class,'about'])->name('about');
 
 Route::prefix('dashboard')->middleware('guest:admin')->group(function () {
 
@@ -93,6 +97,7 @@ Route::prefix('dashboard')->middleware('auth:admin') ->group(function () {
     Route::resource('contacts',  ContactController::class);
     Route::resource('documents',  DocumentController::class);
     Route::resource('questionnaires',  QuestionnaireController::class);
+    Route::resource('conditions',  ConditionsController::class);
 
 
     Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
